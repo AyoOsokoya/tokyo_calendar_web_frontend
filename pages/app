@@ -3,3 +3,13 @@
     <NuxtWelcome />
   </div>
 </template>
+
+<!--<template>-->
+<!--  <div>-->
+<!--    <h1>Hello from app.vue</h1>-->
+<!--    <NuxtLayout>-->
+<!--      <h1>Hello from app.vue</h1>-->
+<!--      <NuxtPage/>-->
+<!--    </NuxtLayout>-->
+<!--  </div>-->
+<!--</template>-->

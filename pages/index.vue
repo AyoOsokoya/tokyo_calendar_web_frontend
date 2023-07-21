@@ -7,15 +7,14 @@
     <h5>Hello</h5>
     <h6>Hello</h6>
     <p>Lorem ipsum dolor sit amet</p>
-    Hi
-    <span v-for="item in items">
-      {{ item }}
-    </span>
+<!--    <EventTileComponent v-for="item in items"/>-->
   </div>
 </template>
 <script lang="ts">
+import { EventTileComponent } from "#components";
 export default {
   name: "ComponentName",
+  layout: 'default',
   data() {
     return {
       items: [
