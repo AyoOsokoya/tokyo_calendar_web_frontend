@@ -4,5 +4,8 @@ export default defineNuxtConfig({
     modules: [
         'nuxt-icon',
         'nuxt-lodash'
+    ],
+    buildModules: [
+        '@nuxtjs/composition-api/module'
     ]
 })
