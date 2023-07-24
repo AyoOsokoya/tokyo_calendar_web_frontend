@@ -1,14 +1,23 @@
 <template>
-  <div id="app">
-    <h1>Hello</h1>
-    <h2>Hello</h2>
-    <h3>Hello</h3>
-    <h4>Hello</h4>
-    <h5>Hello</h5>
-    <h6>Hello</h6>
-    <p>Lorem ipsum dolor sit amet</p>
-<!--    <EventTileComponent v-for="item in items"/>-->
-  </div>
+  <v-col>
+    <div id="app">
+      <h1>Hello</h1>
+      <h2>Hello</h2>
+      <h3>Hello</h3>
+      <h4>Hello</h4>
+      <h5>Hello</h5>
+      <h6>Hello</h6>
+      <p>Lorem ipsum dolor sit amet</p>
+  <!--    <EventTileComponent v-for="item in items"/>-->
+      <v-btn>Hello!</v-btn>
+      <v-btn>Click Me!!</v-btn>
+      <v-card>
+        <v-card-title>Title</v-card-title>
+      </v-card>
+      <v-chip>chip</v-chip>
+      <v-icon icon="$vuetify"></v-icon>
+    </div>
+  </v-col>
 </template>
 <script lang="ts">
 import { EventTileComponent } from "#components";
