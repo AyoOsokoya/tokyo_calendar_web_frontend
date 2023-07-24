@@ -33,7 +33,8 @@ export default {
 
 <template>
 <div class="event-tile">
-  <div> {{ url_image }}</div>
+  <v-img src="http://placekitten.com/g/960/320"></v-img>
+<!--  <div> {{ url_image }}</div>-->
   <div> {{ name }}</div>
   <div> {{ description }}</div>
   <div> {{ starts_at }}</div>
@@ -41,5 +42,8 @@ export default {
 </template>
 
 <style scoped>
+.event-tile{
+
+}
 
 </style>

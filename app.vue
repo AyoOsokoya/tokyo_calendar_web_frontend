@@ -5,7 +5,7 @@
 <!--</template>-->
 
 <template>
-  <div>
+  <div class="container w-66 ml-auto mr-auto">
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
