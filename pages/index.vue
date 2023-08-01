@@ -1,50 +1,39 @@
 <template>
   <v-col class="ml-auto mr-auto w-12">
     <div id="app">
-<!--      <h1>Hello</h1>-->
-<!--      <h2>Hello</h2>-->
-<!--      <h3>Hello</h3>-->
-<!--      <h4>Hello</h4>-->
-<!--      <h5>Hello</h5>-->
-<!--      <h6>Hello</h6>-->
-<!--      <p>Lorem ipsum dolor sit amet</p>-->
-<!--      <EventTileComponent v-for="item in items"/>-->
-      <ImageGalleryGrid/>
-<!--      <ImageGalleryGrid/>-->
-<!--      <ImageGalleryGrid/>-->
-<!--      <ImageGalleryGrid/>-->
-<!--      <ImageGalleryGrid/>-->
-<!--      <v-btn>Hello!</v-btn>-->
-<!--      <v-btn>Click Me!!</v-btn>-->
-<!--      <v-card>-->
-<!--        <v-card-title>Title</v-card-title>-->
-<!--      </v-card>-->
-<!--      <v-chip>chip</v-chip>-->
-<!--      <v-icon icon="$vuetify"></v-icon>-->
+      <ImageGalleryGrid :events="events" @show-event="showEvent"/>
     </div>
   </v-col>
 </template>
 <script lang="ts">
-import { EventTileComponent, ImageGalleryGrid } from "#components";
+import {EventTileComponent, ImageGalleryGrid} from "#components";
+
 export default {
-  name: "ComponentName",
+  name: "IndexPage",
   layout: 'default',
   data() {
     return {
-      items: [
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-        'item',
-      ]
+      events: []
     };
+  },
+  mounted() {
+    this.mounted();
+  },
+  methods: {
+    async mounted() {
+      const {data: results, error: error} = await useFetch('http://localhost/api/v1/events/');
+      useFetch('http://localhost/api/v1/events/')
+          .then((results) => {
+            this.events = results.data.value;
+          }).catch((error) => {
+            console.log(error);
+      })
+    },
+    showEvent(event) {
+      console.log(event);
+      // this.$router.push({name: 'event', params: {id: 1}});
+    }
   }
+
 }
 </script>
