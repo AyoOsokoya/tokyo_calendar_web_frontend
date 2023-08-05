@@ -1,7 +1,7 @@
 <template>
   <v-col class="ml-auto mr-auto w-12">
     <div id="app">
-      Page
+      Page.
       <ImageGalleryGrid :events="events" @show-event="showEvent"/>
     </div>
   </v-col>
@@ -26,8 +26,9 @@ export default {
       console.log('fetching events')
       useFetch('http://localhost/api/v1/events/')
           .then((results) => {
+            console.log('then');
             this.events = results.data.value;
-            console.log(this.events)
+            console.log(JSON.stringify(results.data))
           }).catch((error) => {
             console.log(error);
       })
