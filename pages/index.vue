@@ -1,6 +1,7 @@
 <template>
   <v-col class="ml-auto mr-auto w-12">
     <div id="app">
+      Page
       <ImageGalleryGrid :events="events" @show-event="showEvent"/>
     </div>
   </v-col>
@@ -17,19 +18,21 @@ export default {
     };
   },
   mounted() {
+    console.log('mounted')
     this.mounted();
   },
   methods: {
     async mounted() {
-      const {data: results, error: error} = await useFetch('http://localhost/api/v1/events/');
+      console.log('fetching events')
       useFetch('http://localhost/api/v1/events/')
           .then((results) => {
             this.events = results.data.value;
+            console.log(this.events)
           }).catch((error) => {
             console.log(error);
       })
     },
-    showEvent(event) {
+    showEvent(event: any) {
       console.log(event);
       // this.$router.push({name: 'event', params: {id: 1}});
     }
